@@ -1,18 +1,18 @@
 package com.bugtracker.bugtrackerclient.service;
 
-import jakarta.annotation.PostConstruct;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
-import org.springframework.security.oauth2.core.oidc.user.OidcUser;
-import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.IntStream;
+
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
+import org.springframework.security.oauth2.core.oidc.user.OidcUser;
+import org.springframework.stereotype.Service;
+
+import jakarta.annotation.PostConstruct;
 
 @Service
 public class BugTrackerService {
@@ -38,7 +38,7 @@ public class BugTrackerService {
         bugs.add(b2);
 
         long id3 = idGenerator.getAndIncrement();
-        Bug b3 = new Bug(id3,"johndoe", "Nullpointer exception when 0 passed", "Nullpointer exception when 0 passed", "App3", Bug.BugSeverity.CRITICAL, Bug.BugState.CLOSED);
+        Bug b3 = new Bug(id3,"johndoe", "Stack over flow", "Stack over flow", "App3", Bug.BugSeverity.CRITICAL, Bug.BugState.CLOSED);
         bugs.add(b3);
 
         long id4 = idGenerator.getAndIncrement();
